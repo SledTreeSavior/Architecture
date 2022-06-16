@@ -1,0 +1,172 @@
+Commands to set up:
+[ksavoie@mercury1 HW4]$ ./mcc hw4.mc > prom_new.dat
+Microcode Compiler - Version 1.0 - Richard Boccuzzi
+gcc -c -g hw4.c
+flex hw4.ll
+gcc -c -g lex.yy.c
+gcc -o masm_nr hw4.o lex.yy.o
+./masm_nr < a4_div_test.asm > a4_div_test.obj
+./masm_nr < a4_mult_test.asm > a4_mult_test.obj
+./masm_nr < a4_rshift_test.asm > a4_rshift_test.obj
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+RSHIFT
+[ksavoie@mercury1 HW4]$ ./mic1 prom_new.dat a4_rshift_test.obj 0 2048
+
+Read in 158 micro instructions
+Read in 25 machine instructions
+Starting PC is : 0000000000000000  base 10:       0
+Starting SP is : 0000100000000000  base 10:    2048
+
+
+ProgramCounter : 0000000000000011  base 10:       3
+Accumulator    : 0000110101111011  base 10:    3451
+InstructionReg : 1111111111000000  base 10:   65472
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000100000000000  base 10:    2048
+ARegister      : 0000000000001111  base 10:      15
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 41
+
+Type decimal address to view memory,  q  to quit or  c  to continue: c
+
+The new PC is  : 0000000000000011
+
+
+ProgramCounter : 0000000000000110  base 10:       6
+Accumulator    : 0000010000000000  base 10:    1024
+InstructionReg : 1111111111000000  base 10:   65472
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000100000000000  base 10:    2048
+ARegister      : 0000000000001111  base 10:      15
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 88
+
+Type decimal address to view memory,  q  to quit or  c  to continue: c
+
+The new PC is  : 0000000000000110
+
+
+ProgramCounter : 0000000000001001  base 10:       9
+Accumulator    : 0000000111000000  base 10:     448
+InstructionReg : 1111111111000000  base 10:   65472
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000100000000000  base 10:    2048
+ARegister      : 0000000000001111  base 10:      15
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 143
+
+Type decimal address to view memory,  q  to quit or  c  to continue: c
+
+The new PC is  : 0000000000001001
+
+
+ProgramCounter : 0000000000001100  base 10:      12
+Accumulator    : 0000000000000001  base 10:       1
+InstructionReg : 1111111111000000  base 10:   65472
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000100000000000  base 10:    2048
+ARegister      : 0000000000001111  base 10:      15
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 214
+
+Type decimal address to view memory,  q  to quit or  c  to continue: c
+
+The new PC is  : 0000000000001100
+
+
+ProgramCounter : 0000000000001111  base 10:      15
+Accumulator    : 0000000000111011  base 10:      59
+InstructionReg : 1111111111000000  base 10:   65472
+TempInstr      : 1000000000000000  base 10:   32768
+StackPointer   : 0000100000000000  base 10:    2048
+ARegister      : 0000000000001111  base 10:      15
+BRegister      : 1111111111111111  base 10:   65535
+CRegister      : 0000000000000000  base 10:       0
+DRegister      : 0000000000000000  base 10:       0
+ERegister      : 0000000000000000  base 10:       0
+FRegister      : 0000000000000000  base 10:       0
+
+Total cycles   : 263
+
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MULT
+Type decimal address to view memory,  q  to quit or  c  to continue: 2040
+     the location 2040 has value 1111111111111111 , or 65535  or signed     -1
+Type  <Enter>  to continue debugging
+Type        q  to quit
+Type        f for forward range
+Type        b for backward range: f
+Type the number of forward locations to dump: 8
+     the location 2041 has value 1111111111111111 , or 65535  or signed     -1
+     the location 2042 has value 1111111111001001 , or 65481  or signed    -55 (TEST 6)
+     the location 2043 has value 0000001011001011 , or   715  or signed    715 (TEST 5 overflows/stays the same)
+     the location 2044 has value 1111100000000000 , or 63488  or signed  -2048 (TEST 4 INCORRECT, not supposed to stay the same because it isnt an overflow, but it is converted to a positive number first and +2048 causes and overflow multiplied by 16)
+     the location 2045 has value 0111111111111000 , or 32760  or signed  32760 (TEST 3)
+     the location 2046 has value 1100101110101110 , or 52142  or signed -13394 (TEST 2)
+     the location 2047 has value 0000000000000000 , or     0  or signed      0 (TEST 1)
+     the location 2048 has value 1111111111111111 , or 65535  or signed     -1
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+DIV
+Type decimal address to view memory,  q  to quit or  c  to continue: 2020
+     the location 2020 has value 1111111111111111 , or 65535  or signed     -1
+Type  <Enter>  to continue debugging
+Type        q  to quit
+Type        f for forward range
+Type        b for backward range: f
+Type the number of forward locations to dump: 30
+     the location 2021 has value 1111111111111111 , or 65535  or signed     -1
+     the location 2022 has value 1111111111111111 , or 65535  or signed     -1
+     the location 2023 has value 1111111111111111 , or 65535  or signed     -1
+     the location 2024 has value 0000000111100001 , or   481  or signed    481 (quotient)
+     the location 2025 has value 0000000000001110 , or    14  or signed     14 (remainder)
+     the location 2026 has value 0001111111111111 , or  8191  or signed   8191 (dividend)
+     the location 2027 has value 0000000000010001 , or    17  or signed     17 (divisor for TEST 6)
+     the location 2028 has value 0000000000000000 , or     0  or signed      0 (quotient)
+     the location 2029 has value 0000000000000000 , or     0  or signed      0 (remainder)
+     the location 2030 has value 0000000000000000 , or     0  or signed      0 (dividend)
+     the location 2031 has value 0000000111111111 , or   511  or signed    511 (divisor TEST 5)
+     the location 2032 has value 0000000001011111 , or    95  or signed     95 (quotient/INCORRECT/should be neg)
+     the location 2033 has value 0000000011111111 , or   255  or signed    255 (remainder)
+     the location 2034 has value 0101111111111111 , or 24575  or signed  24575 (dividend)
+     the location 2035 has value 1111111100000000 , or 65280  or signed   -256 (divisor TEST 4)
+     the location 2036 has value 0000001000000000 , or   512  or signed    512 (quotient)
+     the location 2037 has value 0000000000000111 , or     7  or signed      7 (remainder)
+     the location 2038 has value 1101111111111001 , or 57337  or signed  -8199 (dividend)
+     the location 2039 has value 1111111111110000 , or 65520  or signed    -16 (divisor TEST 3)
+     the location 2040 has value 0000000000000000 , or     0  or signed      0 (quotient)
+     the location 2041 has value 1111111111111111 , or 65535  or signed     -1 (remainder)
+     the location 2042 has value 0000000110110101 , or   437  or signed    437 (dividend)
+     the location 2043 has value 0000000000000000 , or     0  or signed      0 (divisor TEST 2)
+     the location 2044 has value 0000000000000000 , or     0  or signed      0 (quotient)
+     the location 2045 has value 0001001101001111 , or  4943  or signed   4943 (remainder)
+     the location 2046 has value 0001001101001111 , or  4943  or signed   4943 (dividend)
+     the location 2047 has value 1110101111100000 , or 60384  or signed  -5152 (divisor TEST 1)
+     the location 2048 has value 1111111111111111 , or 65535  or signed     -1
+     the location 2049 has value 1111111111111111 , or 65535  or signed     -1
+     the location 2050 has value 1111111111111111 , or 65535  or signed     -1
+Type decimal address to view memory,  q  to quit or  c  to continue: q
+MIC-1 emulator finishing, goodbye
+

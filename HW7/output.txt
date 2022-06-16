@@ -1,0 +1,35 @@
+[ksavoie@mercury1 HW7]$ ./hw7
+
+This is the Parent process report:
+
+PARENT PROG:  Process ID is:            1999194
+PARENT PROC:  Process parent ID is:     1995768
+PARENT PROC:  Real UID is:              34242
+PARENT PROC:  Real GID is:              2022
+PARENT PROC:  Effective UID is:         34242
+PARENT PROC:  Effective GID is:         2022
+PARENT PROC:  Process priority is:      0
+
+PARENT PROC: will now create child, write pipe,
+ and do a normal termination
+
+This is the Child process report:
+
+                CHILD PROC:  Process ID is:             1999195
+                CHILD PROC:  Process parent ID is:      1999194    //The child PPID is not always displayed correctly
+                CHILD PROC:  Real UID is:               34242      //Sometimes it will display as "1" instead of
+                CHILD PROC:  Real GID is:               2022       //the actual PPID. Running the program again
+                CHILD PROC:  Effective UID is:          34242	   //will display the correct PPID.
+                CHILD PROC:  Effective GID is:          2022
+                CHILD PROC:  Process priority is:       0
+
+CHILD PROG: about to read pipe and report parent message:
+
+PARENT PROG: created Child with 1999195 PID
+CHILD PROC: parent's msg is:
+        This is the pipe message from the parent with PID 1999194
+
+CHILD PROC: Process parent ID now is:   1
+CHILD PROC: ### Goodbye ###
+[ksavoie@mercury1 HW7]$
+

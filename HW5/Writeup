@@ -1,0 +1,9 @@
+Build Commands:
+	./masm_mrd < hw5.asm > hw5.obj
+	./mic1 prom_mrd.dat hw5.obj 0 2048
+
+Email: Kyle_Savoie@student.uml.edu
+
+Degree of Success: My project is 100% successful in calculating the correct answer to the test problems from the HW5 assignment PDF.
+
+Description: My program prints the prompt to get the user to enter a value and then reads the value in. It does this again for the second value. It then converts the input values to integers and adds the values together. Then the answer is converted back into a string and outputted with the answer text. The AC is then set to 0. If the answer is negative, then an overflow is found, and an error text prompt is displayed. The AC is then set to -1.

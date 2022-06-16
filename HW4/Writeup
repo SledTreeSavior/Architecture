@@ -1,0 +1,5 @@
+Email: Kyle_Savoie@student.uml.edu
+
+Degree of Success: My project is 90% successful in computing the correct answers for RSHIFt, MULT, and DIV. The fourth RSHIFT test for MULT is incorrect becuas ethat case is not accounted for. The number is converted to a positive number, but the positive number would cause an overflow, but there shouldn't be an overflow here. For DIV, the fourth test is incorrect to because a positive divided by a negative should be negative but the answer is positive.
+
+Description: My microcode adds multiplication as iterative addition. It does this by setting the accumulator as the product once addition is completed. Division is implemented as iterative subtraction between the divisor and the dividend and the quotient and remainder is pushed to the stack.

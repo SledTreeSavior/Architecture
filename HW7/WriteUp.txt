@@ -1,0 +1,3 @@
+Email: Kyle_Savoie@student.uml.edu
+Degree of Success: My program is 95% successful in showing the values of the child process when fork() is called. I'm not sure why, but sometimes after I run "make" and then "./hw7" the child's PPID doesn't show correctly and consistantly. It will show the parent's PPID correctly, but sometimes it just shows "1".
+Description: I modified the help file with a switch case that executes actions based on the returned value of the fork() call.

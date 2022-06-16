@@ -1,0 +1,7 @@
+Degree of Success: 100%
+	My project correctly adds two floating point numbers using only integer operations in C++. This is shown by the output of my program, which proves that my integer operation based addition creates an output that matches the floating point addition handled by the system itself.
+
+My Approach:
+	I started this project by using the helper code to get a program compiled and running. Once that was done, I began to print out values to see where the helper code left off. Once I understood what the program needed to be complete, I added print statements to display the information correctly, and added some if/else statements to deal with an answers deemed infinite. I also added a bit extra, differentiating between +inf and -inf. I did not notice any problems adding two positive floating point numbers that need to be addressed here.
+
+My Email: Kyle_Savoie@student.uml.edu
